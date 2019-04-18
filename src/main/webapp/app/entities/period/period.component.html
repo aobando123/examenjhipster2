@@ -24,8 +24,8 @@
             <tbody>
             <tr *ngFor="let period of periods ;trackBy: trackId">
                 <td><a [routerLink]="['/period', period.id, 'view' ]">{{period.id}}</a></td>
-                <td>{{period.startDate | date:'medium'}}</td>
-                <td>{{period.endDate | date:'medium'}}</td>
+                <td>{{period.startDate | date:'mediumDate'}}</td>
+                <td>{{period.endDate | date:'mediumDate'}}</td>
                 <td>{{period.name}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">

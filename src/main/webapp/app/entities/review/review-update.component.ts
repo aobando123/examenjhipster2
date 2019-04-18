@@ -1,10 +1,10 @@
+import { DATE_FORMAT } from './../../shared/constants/input.constants';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import * as moment from 'moment';
-import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 import { JhiAlertService } from 'ng-jhipster';
 import { IReview } from 'app/shared/model/review.model';
 import { ReviewService } from './review.service';
@@ -33,7 +33,7 @@ export class ReviewUpdateComponent implements OnInit {
         this.isSaving = false;
         this.activatedRoute.data.subscribe(({ review }) => {
             this.review = review;
-            this.timestamp = this.review.timestamp != null ? this.review.timestamp.format(DATE_TIME_FORMAT) : null;
+            this.timestamp = this.review.timestamp != null ? this.review.timestamp.format(DATE_FORMAT) : null;
         });
         this.storyService
             .query()
@@ -50,7 +50,7 @@ export class ReviewUpdateComponent implements OnInit {
 
     save() {
         this.isSaving = true;
-        this.review.timestamp = this.timestamp != null ? moment(this.timestamp, DATE_TIME_FORMAT) : null;
+        this.review.timestamp = this.timestamp != null ? moment(this.timestamp, DATE_FORMAT) : null;
         if (this.review.id !== undefined) {
             this.subscribeToSaveResponse(this.reviewService.update(this.review));
         } else {

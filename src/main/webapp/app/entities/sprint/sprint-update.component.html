@@ -17,14 +17,14 @@
                 <div class="form-group">
                     <label class="form-control-label" for="field_endDate">End Date</label>
                     <div class="d-flex">
-                        <input id="field_endDate" type="datetime-local" class="form-control" name="endDate" [(ngModel)]="endDate" placeholder="YYYY-MM-DD HH:mm"
+                        <input id="field_endDate" type="date" class="form-control" name="endDate" [(ngModel)]="endDate" placeholder="YYYY-MM-DD"
                         />
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="form-control-label" for="field_startDate">Start Date</label>
                     <div class="d-flex">
-                        <input id="field_startDate" type="datetime-local" class="form-control" name="startDate" [(ngModel)]="startDate" placeholder="YYYY-MM-DD HH:mm"
+                        <input id="field_startDate" type="date" class="form-control" name="startDate" [(ngModel)]="startDate" placeholder="YYYY-MM-DD"
                         />
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                     <label class="form-control-label" for="field_team">Team</label>
                     <select class="form-control" id="field_team" name="team" [(ngModel)]="sprint.team" >
                         <option [ngValue]="null"></option>
-                        <option [ngValue]="teamOption.id === sprint.team?.id ? sprint.team : teamOption" *ngFor="let teamOption of teams; trackBy: trackTeamById">{{teamOption.id}}</option>
+                        <option [ngValue]="teamOption.id === sprint.team?.id ? sprint.team : teamOption" *ngFor="let teamOption of teams; trackBy: trackTeamById">{{teamOption.name}}</option>
                     </select>
                 </div>
             </div>

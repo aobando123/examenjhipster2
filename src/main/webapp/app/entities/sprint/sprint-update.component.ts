@@ -4,7 +4,7 @@ import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import * as moment from 'moment';
-import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
+import { DATE_FORMAT } from 'app/shared/constants/input.constants';
 import { JhiAlertService } from 'ng-jhipster';
 import { ISprint } from 'app/shared/model/sprint.model';
 import { SprintService } from './sprint.service';
@@ -34,8 +34,8 @@ export class SprintUpdateComponent implements OnInit {
         this.isSaving = false;
         this.activatedRoute.data.subscribe(({ sprint }) => {
             this.sprint = sprint;
-            this.endDate = this.sprint.endDate != null ? this.sprint.endDate.format(DATE_TIME_FORMAT) : null;
-            this.startDate = this.sprint.startDate != null ? this.sprint.startDate.format(DATE_TIME_FORMAT) : null;
+            this.endDate = this.sprint.endDate != null ? this.sprint.endDate.format(DATE_FORMAT) : null;
+            this.startDate = this.sprint.startDate != null ? this.sprint.startDate.format(DATE_FORMAT) : null;
         });
         this.teamService
             .query()

@@ -25,7 +25,7 @@
             <tbody>
             <tr *ngFor="let review of reviews ;trackBy: trackId">
                 <td><a [routerLink]="['/review', review.id, 'view' ]">{{review.id}}</a></td>
-                <td>{{review.timestamp | date:'medium'}}</td>
+                <td>{{review.timestamp | date:'mediumDate'}}</td>
                 <td>{{review.comment}}</td>
                 <td>{{review.status}}</td>
                 <td>

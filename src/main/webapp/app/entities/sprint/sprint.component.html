@@ -27,12 +27,12 @@
             <tr *ngFor="let sprint of sprints ;trackBy: trackId">
                 <td><a [routerLink]="['/sprint', sprint.id, 'view' ]">{{sprint.id}}</a></td>
                 <td>{{sprint.name}}</td>
-                <td>{{sprint.endDate | date:'medium'}}</td>
-                <td>{{sprint.startDate | date:'medium'}}</td>
+                <td>{{sprint.endDate | date:'mediumDate'}}</td>
+                <td>{{sprint.startDate | date:'mediumDate'}}</td>
                 <td>{{sprint.status}}</td>
                 <td>
                     <div *ngIf="sprint.team">
-                        <a [routerLink]="['../team', sprint.team?.id, 'view' ]" >{{sprint.team?.id}}</a>
+                        <a [routerLink]="['../team', sprint.team?.id, 'view' ]" >{{sprint.team?.name}}</a>
                     </div>
                 </td>
                 <td class="text-right">
