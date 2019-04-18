@@ -52,8 +52,8 @@ export class SprintUpdateComponent implements OnInit {
 
     save() {
         this.isSaving = true;
-        this.sprint.endDate = this.endDate != null ? moment(this.endDate, DATE_TIME_FORMAT) : null;
-        this.sprint.startDate = this.startDate != null ? moment(this.startDate, DATE_TIME_FORMAT) : null;
+        this.sprint.endDate = this.endDate != null ? moment(this.endDate, DATE_FORMAT) : null;
+        this.sprint.startDate = this.startDate != null ? moment(this.startDate, DATE_FORMAT) : null;
         if (this.sprint.id !== undefined) {
             this.subscribeToSaveResponse(this.sprintService.update(this.sprint));
         } else {
