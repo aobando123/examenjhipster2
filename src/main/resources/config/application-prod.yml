@@ -27,8 +27,8 @@ spring:
             enabled: false
     data:
         mongodb:
-            uri: mongodb://localhost:27017
-            database: examenjhipster2
+            uri: ${MONGODB_URI:mongodb://localhost:27017/Examen2}
+            database: heroku_l9skdgz6
     mail:
         host: localhost
         port: 25
