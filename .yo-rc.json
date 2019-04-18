@@ -33,7 +33,9 @@
     "jwtSecretKey": "OGY4OTA2NjQ2YTAyNzU5YzRkZDkzMjZkN2Q5MjdmODA1YzY4NjczNWM5NGYwY2UyYWE2OTUxZDYzYmYxZDA1ODZmMzhiM2QyMDFlY2JhMzYzOTQ5ZTkxMjYwYjkwY2VlYzlmOWM2YmFjNjI3NWIxNDRhYzY4OTRiYzkzNDYxYTM=",
     "entitySuffix": "",
     "dtoSuffix": "DTO",
-    "otherModules": []
+    "otherModules": [],
+    "herokuAppName": "examenjhipster",
+    "herokuDeployType": "git"
   },
   "git-provider": "GitHub",
   "git-company": "aobando123",
