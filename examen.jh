@@ -1,0 +1,56 @@
+entity Period {
+	startDate Instant,
+    endDate Instant,
+    name String
+}
+entity Project {
+	name String,
+    numStudent Long,
+    schedule String,
+    status String
+}
+entity Team {
+	name String,
+    status String
+}
+entity Sprint {
+	name String,
+    endDate Instant,
+    startDate Instant,
+    status String
+}
+entity Story {
+	code String,
+    name String,
+    description String,
+    status String
+}
+entity Student {
+	name String,
+    lastName String,
+    role String,
+    status String
+}
+entity Review {
+	timestamp Instant,
+    comment String,
+    status String
+}
+
+relationship OneToMany {
+	Period{project} to Project,
+    Project{team} to Team,
+    Team{sprint} to Sprint,
+    Team{student} to Student
+    Story{student} to Student,
+    Sprint{story} to Story,
+    Story{review} to Review
+    
+}
+
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
